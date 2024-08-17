@@ -27,5 +27,8 @@ pip3 install --upgrade pip
 pip3 install online-judge-tools online-judge-template-generator selenium
 ```
 
-#### how to login
-`oj login -u [userName] -p [password] "https://atcoder.jp/"`
+#### how to
+- login: `oj login -u [userName] -p [password] "https://atcoder.jp/"`
+- fetch : `oj-prepare [url]`
+- test: `oj test -c 'python main.py' -t 2`
+- submit: `oj submit main.py -l 5055 -y`
