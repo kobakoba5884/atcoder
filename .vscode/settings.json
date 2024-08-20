@@ -3,6 +3,7 @@
         "*.kt": "kotlin",
         "iostream": "cpp",
         "ostream": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "valarray": "cpp"
     }
 }
