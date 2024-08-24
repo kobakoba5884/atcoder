@@ -1,4 +1,5 @@
 #include <iostream>
+#include<set>
 
 using namespace std;
 
@@ -18,32 +19,23 @@ int main()
         }
     }
 
-    for (int i = 1; i <= N; i++)
-    {
-        int A = M[1][i];
-        if(A > K){
-            continue;
+    set<int> sumAB;
+
+    for(int i = 1; i <= N; i++){
+        for(int j = 1; j <= N; j++){
+            sumAB.insert(M[1][i] + M[2][j]);
         }
-        for (int j = 1; j <= N; j++)
-        {
-            int B = M[2][j];
-            if(A + B > K){
-                continue;
-            }
-            for(int k = 1; k <= N; k++){
-                int C = M[3][k];
-                if(A + B + C > K){
-                    continue;
-                }
-                for(int l = 1; l <= N; l++){
-                    if(M[4][l] == K - (A + B + C)){
-                        cout << "Yes" << endl;
-                        return 0;
-                    }
-                }
+    }
+
+    for(int i = 1; i <= N; i++){
+        for(int j = 1; j <= N; j++){
+            if(sumAB.contains(M[3][i] + M[4][j])){
+                cout << "Yes" << endl;
+                return 0;
             }
         }
     }
+
 
     cout << "No" << endl;
 
