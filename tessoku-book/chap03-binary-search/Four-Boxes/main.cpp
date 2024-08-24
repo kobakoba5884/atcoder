@@ -1,5 +1,5 @@
 #include <iostream>
-#include<set>
+#include <set>
 
 using namespace std;
 
@@ -20,22 +20,25 @@ int main()
     }
 
     set<int> sumAB;
+    set<int> sumCD;
 
-    for(int i = 1; i <= N; i++){
-        for(int j = 1; j <= N; j++){
+    for (int i = 1; i <= N; i++)
+    {
+        for (int j = 1; j <= N; j++)
+        {
             sumAB.insert(M[1][i] + M[2][j]);
+            sumCD.insert(M[3][i] + M[4][j]);
         }
     }
 
-    for(int i = 1; i <= N; i++){
-        for(int j = 1; j <= N; j++){
-            if(sumAB.contains(M[3][i] + M[4][j])){
-                cout << "Yes" << endl;
-                return 0;
-            }
+    for (auto sum : sumAB)
+    {
+        if (sumCD.contains(K - sum))
+        {
+            cout << "Yes" << endl;
+            return 0;
         }
     }
-
 
     cout << "No" << endl;
 
