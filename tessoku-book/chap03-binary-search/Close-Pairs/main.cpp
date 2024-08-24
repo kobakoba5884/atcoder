@@ -15,16 +15,18 @@ int main()
         cin >> A[i];
     }
 
-    int cnt = 0;
-    for (int i = 1; i <= N; i++)
+    long long cnt = 0;
+    int j = 2;
+
+    for (int i = 1; i < N; ++i)
     {
-        for (int j = i + 1; j <= N; j++)
+
+        while (j <= N && A[j] - A[i] <= K)
         {
-            if (A[j] - A[i] <= K)
-            {
-                cnt++;
-            }
+            j++;
         }
+
+        cnt += (j - i - 1);
     }
 
     cout << cnt << endl;
