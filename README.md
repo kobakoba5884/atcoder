@@ -4,6 +4,7 @@
 
 #### setup (ubuntu)
 ```sh
+# python
 PYENV_DEP="make build-essential libssl-dev zlib1g-dev \
     libbz2-dev libreadline-dev libsqlite3-dev wget llvm libncurses5-dev \
     libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl"
@@ -23,12 +24,27 @@ curl https://pyenv.run | bash \
     && pyenv install "${PYTHON_VERSION}" \
     && pyenv global "${PYTHON_VERSION}"
 
+# oj
 pip3 install --upgrade pip
 pip3 install online-judge-tools online-judge-template-generator selenium
+
+# c++
+sudo apt install gcc-12
+sudo apt install g++-12
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 12
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 12
 ```
 
-#### how to
+##### add settins.json
+`"C_Cpp.default.cppStandard": "c++20"`
+
+#### how to oj
 - login: `oj login -u [userName] -p [password] "https://atcoder.jp/"`
 - fetch : `oj-prepare [url]`
 - test: `oj test -c 'python main.py' -t 2`
 - submit: `oj submit main.py -l 5055 -y`
+
+#### how to c++
+- compile
+    - default: `g++ -o main main.cpp`
+    - 20: `g++ -std=gnu++20 -o main main.cpp`
