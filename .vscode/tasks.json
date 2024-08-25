@@ -7,6 +7,7 @@
             "command": "/usr/bin/g++",
             "args": [
                 "-std=gnu++20",
+                "-g",
                 "-o",
                 "${workspaceFolder}/temp/main",
                 "${file}",
